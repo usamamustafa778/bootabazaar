@@ -1,0 +1,24 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm i
+    - CI=false npm run build
+  artifacts:
+    paths:
+      - build
+    exclude:
+      - deploy/**/*
+      - .git/**/*
+
+deploy:
+  stage: deploy
+  script:
+    - sudo rm -rf $DEST_DIR/*
+    - sudo cp -r $CI_PROJECT_DIR/build/* $DEST_DIR/
+    - sudo systemctl restart apache2
+  after_script:
+    - rm -rf $CI_PROJECT_DIR/*

@@ -1,0 +1,6 @@
+1. Create New Site 
+	1. Give Site Name
+	2. Choose Template
+	3. Hosting Created
+
+2. Show newly created website on dashboard

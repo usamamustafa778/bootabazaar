@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Roboto", sans-serif;
+  font-style: normal;
+}
+
+@layer base {
+  body {
+    @apply bg-lightGreen dark:bg-gray-900;
+  }
+  h1 {
+    @apply text-4xl font-medium dark:text-white;
+  }
+  h2 {
+    @apply text-3xl font-medium dark:text-white;
+  }
+  h3 {
+    @apply text-2xl font-medium dark:text-white;
+  }
+  h4 {
+    @apply text-xl font-medium dark:text-white;
+  }
+  h5 {
+    @apply text-lg font-medium dark:text-white;
+  }
+  h6 {
+    @apply text-base font-medium dark:text-white;
+  }
+  strong {
+    @apply dark:text-white;
+  }
+}
+
+@layer components {
+  /* Buttons */
+  .btnPrimary {
+    @apply px-4 py-2 text-sm font-medium flex items-center justify-center gap-2 bg-primary whitespace-nowrap text-center capitalize shadow text-white rounded-md cursor-pointer transition-all;
+  }
+  .btnPrimary:hover {
+    @apply opacity-90;
+  }
+  .btnPrimary:disabled {
+    @apply opacity-50;
+  }
+  .btnWhite {
+    @apply px-3 py-2 text-sm font-medium flex items-center justify-center gap-2 bg-white whitespace-nowrap text-center shadow dark:bg-gray-800 dark:text-white rounded-md cursor-pointer transition-all;
+  }
+  .btnDropdown {
+    @apply p-2 border-b dark:border-white/30 text-left w-full transition-all flex items-center gap-3 dark:text-white/90;
+  }
+  .btnDropdown:hover {
+    @apply rounded bg-gray-100 dark:bg-white/10;
+  }
+  .btnOutlined {
+    @apply px-3 py-2 text-sm font-medium flex items-center justify-center gap-2 border-white/20 border text-white whitespace-nowrap text-center shadow dark:bg-gray-800 dark:text-white rounded cursor-pointer transition-all;
+  }
+
+  /* Links */
+  .pageLink {
+    @apply p-2 flex items-center w-full outline-none whitespace-nowrap;
+  }
+  .pageLink:hover {
+    @apply no-underline bg-gray-100/10;
+  }
+
+  /* Table */
+  .tableHead {
+    @apply px-4 py-2 text-sm text-left whitespace-nowrap font-semibold text-gray-900 dark:text-white/80 uppercase tracking-wider;
+  }
+  .tableBody {
+    @apply bg-white divide-y divide-gray-200 h-full overflow-y-scroll;
+  }
+
+  /* Input Fields */
+  .inputLabel {
+    @apply block text-gray-900 dark:text-white/80 text-xs font-semibold capitalize;
+  }
+  .inputField {
+    @apply w-full px-4 py-2 border rounded outline-none dark:bg-transparent border-gray-300 dark:border-white/30;
+  }
+  .inputField:focus {
+    @apply ring-2 ring-yellow-500;
+  }
+
+  /* Headings */
+  .elementHeading {
+    @apply text-2xl lg:text-4xl font-bold capitalize;
+  }
+  .elementHeading2 {
+    @apply text-lg lg:text-xl font-bold capitalize;
+  }
+
+  /* Icons */
+  .editIcon {
+    @apply w-4 h-5 cursor-pointer text-gray-500 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition-all;
+  }
+  .deleteIcon {
+    @apply w-4 h-5 cursor-pointer text-gray-500 dark:text-gray-400 hover:text-red-600 dark:hover:text-red-500 transition-all;
+  }
+
+  /* Edit */
+  .isPhoneView {
+    @apply w-80 rounded-2xl shadow-2xl ml-auto mr-auto shadow-black/50 bg-white border-gray-200 border-8 scroll-container h-[calc(100vh-8rem)] max-h-[680px] overflow-y-scroll;
+  }
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 5px;
+  background-color: rgba(128, 128, 128, 0.125);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #a0a0a0; /* Set color of scrollbar thumb */
+  border-radius: 100px;
+}
+.scroll-container::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar */
+}
+
+.navDropdown {
+  transform: translateX(5px);
+  opacity: 0;
+  z-index: -10;
+  transition: 0.2s;
+  visibility: hidden;
+}
+.navDropdownButton:hover > .navDropdown {
+  transform: translateX(0);
+  z-index: 10;
+  opacity: 100;
+  visibility: visible;
+}
+.hide {
+  display: none;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: red;
+}
+.servicesDropdown {
+  display: none;
+}
+.servicesButton:hover > .servicesDropdown {
+  display: grid;
+}
+
+/* MUI data table */
+.MuiDataGrid-root {
+  border-width: 0 !important;
+  border-color: transparent !important;
+  border-style: none !important;
+}
+.css-aop0yh {
+  border-width: 0 !important;
+  border-color: transparent !important;
+  border-style: none !important;
+}
+
+/* CSS */
+.tempImg:hover > .imgToShow {
+  opacity: 1;
+  visibility: visible;
+}
+
+.imgToShow {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.1s ease;
+}
+.PhoneInputInput {
+  background-color: transparent;
+  outline: none;
+}
+
+.pagesIcon:hover > .pagesList {
+  opacity: 1;
+  visibility: visible;
+}
+.pagesList {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.1s ease;
+}
+.wrap-text {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  display: inline-block;
+  max-width: 100%;
+}
+.section-transition {
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.rc-md-editor .editor-container .sec-md .input{
+  font-size: 16px !important;
+}
